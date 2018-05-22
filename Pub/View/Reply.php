@@ -8,6 +8,7 @@ class Reply extends AbstractReply {
 	public function __construct($renderer, $response, $template, $params) {
 		$this->setJsonParams($params);
 		$this->setResponseType('json');
+		\XF::app()->response()->header( 'Access-Control-Allow-Origin', '*' );
 	}
 
 	public function renderJson() {
