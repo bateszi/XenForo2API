@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<routes>
+  <route route_type="public" route_prefix="api" sub_name="forums" format="forums" controller="bateszi\XenForo2API:API" action_prefix="Forums"/>
+  <route route_type="public" route_prefix="api" sub_name="thread" format="thread" controller="bateszi\XenForo2API:API" action_prefix="Thread"/>
+  <route route_type="public" route_prefix="api" sub_name="threads" format="threads/:any&lt;thread_ids&gt;" controller="bateszi\XenForo2API:API" action_prefix="Threads"/>
+</routes>
