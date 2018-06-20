@@ -147,7 +147,7 @@ class API extends AbstractController {
 		 * @var $newThread Thread
 		 */
 		$newThread = $forum->getNewThread();
-		$newThread->set( 'title', $data['threadTitle'] );
+		$newThread->set( 'title', html_entity_decode( $data['threadTitle'] ) );
 		$newThread->set( 'user_id', $user->user_id );
 		$newThread->set( 'username', $user->username );
 		$newThread->set( 'post_date', \XF::$time );
@@ -194,7 +194,7 @@ class API extends AbstractController {
 			try {
 
 				$post->save();
-				$thread->set( 'title', $data['threadTitle'] );
+				$thread->set( 'title', html_entity_decode( $data['threadTitle'] ) );
 				$thread->save();
 
 				return $this->view( 'bateszi\XenForo2API:Reply', '', [
